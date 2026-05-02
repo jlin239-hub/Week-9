@@ -14,61 +14,51 @@
       --bg:#f3f4f6;
       --shadow: 0 10px 25px rgba(0,0,0,.08);
       --radius:16px;
-      --max:1200px;
-      --accent:#2563eb;
+      --max:1100px;
     }
 
     *{ box-sizing:border-box; }
-    html, body{ height:100%; }
-
-    /* Works even if Google Sites embed blocks page scrolling */
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height:1.65;
-      overflow: hidden;
-    }
-    #scroller{
-      height: 100vh;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      background: var(--bg);
     }
 
+    /* Banner header (no external photo needed) */
     header.hero{
-      min-height: 180px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
-      padding: 18px 14px;
+      padding: 28px 14px;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.62)),
-        url("https://images.unsplash.com/photo-1502303756768-5552a7d4f6f2?auto=format&fit=crop&w=1600&q=70");
-      background-size:cover;
-      background-position:center;
+        radial-gradient(1200px 400px at 20% 0%, rgba(59,130,246,.22), rgba(0,0,0,0)),
+        radial-gradient(900px 320px at 90% 30%, rgba(16,185,129,.18), rgba(0,0,0,0)),
+        linear-gradient(180deg, #111827, #1f2937);
     }
+
     .hero-card{
-      width: min(var(--max), 100%);
+      max-width: var(--max);
+      margin: 0 auto;
       background: rgba(255,255,255,.92);
       border: 1px solid rgba(255,255,255,.55);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 14px 16px;
+      padding: 16px 16px 14px;
       backdrop-filter: blur(7px);
     }
+
     h1{
-      margin:0 0 8px;
+      margin:0 0 10px;
       font-size: 26px;
       line-height:1.25;
     }
+
     .meta{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       margin-bottom: 6px;
     }
+
     .pill{
       display:inline-flex;
       align-items:center;
@@ -79,7 +69,9 @@
       border:1px solid var(--line);
       color:#374151;
       font-size: 13px;
+      white-space: nowrap;
     }
+
     .subtle{
       margin:0;
       color: var(--muted);
@@ -89,8 +81,9 @@
     main{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 16px 14px 44px;
+      padding: 16px 14px 50px;
     }
+
     .section{
       background: var(--card);
       border: 1px solid var(--line);
@@ -99,27 +92,39 @@
       padding: 18px 18px 8px;
       margin-top: 14px;
     }
+
     h2{
       margin:0 0 10px;
       font-size: 18px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--line);
     }
+
     p{ margin: 0 0 12px; }
 
     figure{
       margin: 12px 0 16px;
-      padding: 12px;
+      padding: 14px;
       background: #f9fafb;
       border: 1px solid var(--line);
       border-radius: 14px;
     }
-    figure img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius: 12px;
+
+    .svg-wrap{
+      width: 100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding: 12px 0;
     }
+
+    /* Make SVG responsive */
+    .svg-wrap svg{
+      width: min(520px, 100%);
+      height: auto;
+      display:block;
+    }
+
     figcaption{
       margin-top: 10px;
       color: var(--muted);
@@ -133,14 +138,17 @@
       background: #eef2ff;
       font-weight: 700;
     }
+
     .sources{
       padding: 12px 14px;
       background: #f9fafb;
       border: 1px solid var(--line);
       border-radius: 14px;
     }
+
     .sources ul{ margin: 8px 0 0 18px; }
-    .sources li{ margin-bottom: 8px; word-break: break-word; }
+    .sources li{ margin-bottom: 8px; }
+
     .wordcount{
       margin-top: 10px;
       padding-top: 12px;
@@ -148,99 +156,110 @@
       color: var(--muted);
       font-size: 14px;
     }
-    a{ color: var(--accent); }
   </style>
 </head>
 
 <body>
-  <div id="scroller">
-    <header class="hero">
-      <div class="hero-card">
-        <h1>Week 10: Pollution &amp; Environment — Hazards and Human Health</h1>
-        <div class="meta">
-          <span class="pill">Date: March 18, 2026</span>
-          <span class="pill">Reading: Miller, Chapter 17</span>
-          <span class="pill">Theme: Hazard, Exposure, Risk</span>
-        </div>
-        <p class="subtle">
-          Weekly reflection responding to a discussion question, with solutions, tradeoffs, gaps, and a final question.
-        </p>
+  <header class="hero">
+    <div class="hero-card">
+      <h1>Week 10: Pollution &amp; Environment — Hazards and Human Health</h1>
+      <div class="meta">
+        <span class="pill">Date: March 18, 2026</span>
+        <span class="pill">Reading: Miller, Chapter 17</span>
+        <span class="pill">Theme: Hazard, Exposure, Risk</span>
       </div>
-    </header>
+      <p class="subtle">
+        Weekly reflection responding to a discussion question, with solutions, tradeoffs, gaps, and a final question.
+      </p>
+    </div>
+  </header>
 
-    <main>
-      <section class="section">
-        <h2>Reflection on Miller Chapter 17</h2>
-        <p>
-          Chapter 17 basically made me see environmental issues as real, everyday risk problems, not just “nature” problems.
-          The chapter breaks down what a hazard is and how risk is really about two things: how harmful something is and how
-          likely you are to be exposed to it. That helped me because it explains why some dangers are everywhere but feel invisible,
-          like air pollution, and other dangers get huge attention even if they are less likely.
-        </p>
-        <p>
-          I also liked how it separates risk assessment from risk management. First, you try to figure out what the risk
-          actually is, then you decide what to do about it. And that decision is not only about science. It is also money, politics,
-          and who gets protected first. It made me think a lot about chemicals, too, because we use so many products where the
-          long-term health effects are not fully clear, and that is where prevention matters.
-        </p>
+  <main>
+    <section class="section">
+      <h2>Reflection on Miller Chapter 17</h2>
+      <p>
+        Chapter 17 basically made me see environmental issues as real, everyday risk problems, not just “nature” problems. The chapter breaks down what a hazard is and how risk is really about two things: how harmful something is and how likely you are to be exposed to it. That helped me because it explains why some dangers are everywhere but feel invisible, like air pollution, and other dangers get huge attention even if they are less likely.
+      </p>
+      <p>
+        I also liked how it separates risk assessment from risk management. First, you try to figure out what the risk actually is, then you decide what to do about it. And that decision is not only about science. It is also money, politics, and who gets protected first. It made me think a lot about chemicals, too, because we use so many products where the long-term health effects are not fully clear, and that is where prevention matters.
+      </p>
 
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1584036561584-b03c19da874c?auto=format&fit=crop&w=1600&q=70"
-            alt="Warning sign representing hazards and risk"
-          />
-          <figcaption>
-            Figure 1. Thinking in terms of hazard and exposure makes environmental problems feel more like daily risk decisions.
-          </figcaption>
-        </figure>
-      </section>
+      <figure>
+        <div class="svg-wrap" aria-label="Warning sign illustration">
+          <!-- Inline SVG “picture” (no external links, no 404s) -->
+          <svg viewBox="0 0 640 420" role="img" aria-label="Warning sign and hazard icon">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#fde68a"/>
+                <stop offset="1" stop-color="#f59e0b"/>
+              </linearGradient>
+              <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".18"/>
+              </filter>
+            </defs>
 
-      <section class="section">
-        <h2>Why This Issue Matters to Me</h2>
-        <p>
-          Why this matters to me is that “risk” is not shared equally. If you live near highways, warehouses, power plants, or old
-          industrial sites, your daily exposure is different from someone who does not. Even when everyone is under the same laws,
-          some people have cleaner air, safer water, and more ability to avoid hazards. Once I think in terms of exposure, I stop asking
-          only “is this toxic?” and start asking “who is actually breathing this, and how often?”
-        </p>
-      </section>
+            <rect x="0" y="0" width="640" height="420" rx="18" fill="#f9fafb" />
+            <rect x="18" y="18" width="604" height="384" rx="16" fill="#ffffff" stroke="#e5e7eb" />
 
-      <section class="section">
-        <h2>Thoughts: Solutions, Tradeoffs, and Gaps</h2>
-        <p>
-          Some potential solutions focus on acting earlier. One approach is the precautionary principle: when the potential harm is serious,
-          policymakers can set limits, require safer substitutes, or restrict use even before the evidence is perfect. The advantage is that it
-          protects people before damage becomes irreversible. The disadvantage is that it can be attacked as over-regulation, and it can be hard
-          to set a fair threshold for action.
-        </p>
-        <p>
-          Another solution is stronger chemical testing and disclosure requirements, so products and emissions get evaluated before they spread
-          widely. The advantage is better data and accountability. The downside is cost, slow timelines, and lobbying that tries to weaken rules.
-        </p>
-        <p>
-          <b>Gap in knowledge:</b> I still don’t know how policymakers decide what level of uncertainty is acceptable. I also want to understand how risk
-          assessment deals with cumulative exposure, meaning mixtures of chemicals and repeated low-level exposures over years. That seems like the
-          real world, but it is harder to measure than a single chemical in a lab.
-        </p>
-      </section>
+            <!-- Triangle -->
+            <g filter="url(#s)">
+              <path d="M320 70 L560 350 H80 Z" fill="url(#g)" stroke="#111827" stroke-width="10" />
+              <path d="M320 115 L520 340 H120 Z" fill="none" stroke="#111827" stroke-width="6" opacity=".35"/>
+            </g>
 
-      <section class="section">
-        <h2>Question</h2>
-        <div class="question-box">
-          When the evidence is not perfect yet, but the potential harm is serious, how should policymakers decide when to act?
+            <!-- Exclamation mark -->
+            <rect x="304" y="165" width="32" height="125" rx="16" fill="#111827"/>
+            <circle cx="320" cy="320" r="18" fill="#111827"/>
+
+            <!-- Caption strip -->
+            <rect x="70" y="360" width="500" height="34" rx="10" fill="#eef2ff" stroke="#c7d2fe"/>
+            <text x="320" y="382" text-anchor="middle" font-family="Arial" font-size="14" fill="#111827">
+              Hazard = harm + exposure. Risk management is also political.
+            </text>
+          </svg>
         </div>
-        <div class="wordcount"><b>Word Count:</b> 417</div>
-      </section>
+        <figcaption>
+          Figure 1. A simple hazard/risk reminder: harm matters, but exposure determines who is actually at risk.
+        </figcaption>
+      </figure>
+    </section>
 
-      <section class="section">
-        <h2>Sources Used</h2>
-        <div class="sources">
-          <ul>
-            <li>Miller, G. Tyler, and Scott E. Spoolman. <i>Living in the Environment</i>. Chapter 17.</li>
-          </ul>
-        </div>
-      </section>
-    </main>
-  </div>
+    <section class="section">
+      <h2>Why This Issue Matters to Me</h2>
+      <p>
+        Why this matters to me is that “risk” is not shared equally. If you live near highways, warehouses, power plants, or old industrial sites, your daily exposure is different from someone who does not. Even when everyone is under the same laws, some people have cleaner air, safer water, and more ability to avoid hazards. Once I think in terms of exposure, I stop asking only “is this toxic?” and start asking “who is actually breathing this, and how often?”
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Thoughts: Solutions, Tradeoffs, and Gaps</h2>
+      <p>
+        Some potential solutions focus on acting earlier. One approach is the precautionary principle: when the potential harm is serious, policymakers can set limits, require safer substitutes, or restrict use even before the evidence is perfect. The advantage is that it protects people before damage becomes irreversible. The disadvantage is that it can be attacked as over-regulation, and it can be hard to set a fair threshold for action.
+      </p>
+      <p>
+        Another solution is stronger chemical testing and disclosure requirements, so products and emissions get evaluated before they spread widely. The advantage is better data and accountability. The downside is cost, slow timelines, and lobbying that tries to weaken rules.
+      </p>
+      <p>
+        <b>Gap in knowledge:</b> I still don’t know how policymakers decide what level of uncertainty is acceptable. I also want to understand how risk assessment deals with cumulative exposure, meaning mixtures of chemicals and repeated low-level exposures over years. That seems like the real world, but it is harder to measure than a single chemical in a lab.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Question</h2>
+      <div class="question-box">
+        When the evidence is not perfect yet, but the potential harm is serious, how should policymakers decide when to act?
+      </div>
+      <div class="wordcount"><b>Word Count:</b> 418</div>
+    </section>
+
+    <section class="section">
+      <h2>Sources Used</h2>
+      <div class="sources">
+        <ul>
+          <li>Miller, G. Tyler, and Scott E. Spoolman. <i>Living in the Environment</i>. Chapter 17.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
